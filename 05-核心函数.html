@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./jqueryLibr/jquery-3.4.1.js"></script>
+    <script>
+        // $()代表调用了jQuery核心函数
+        /* 
+        1. 接收一个函数, 为入口函数
+        2, 接收一个字符串
+            - 接收一个字符串选择器
+            - 接收一个代码片段
+        3, 接收一个DOM元素
+
+        */
+
+        //接收一个函数, 为入口函数
+        $(() => { })
+        $(() => {
+            
+            //字符串选择器
+            //返回jQuery对象, 对象中保存了找到的DOM元素
+            let $box1 = $('.box');
+            let $box2 = $('#box2');
+            
+            //接收一个代码片段
+            //返回jQuery对象, 对象中保存了创建的DOM元素
+            let $pp = $("<p>兑仙人的试验</p>");
+            $box1.append($pp);
+
+            //传一个DOM对象
+            //会被包装成一个jQuery对象返回给我们
+            let span = document.getElementsByTagName('span')[0];
+            console.log('span',span);
+            let $span = $(span);
+            console.log('$span',$span);
+
+        })
+
+
+    </script>
+</head>
+
+<body>
+    <div class="box"></div>
+    <div id="box2"></div>
+    <span>dui仙人的span</span>
+</body>
+
+</html>
