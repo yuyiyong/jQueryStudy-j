@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./jqueryLibr/jquery-3.4.1.js"></script>
+    <script>
+        //利用jQuery的静态方法each遍历伪数组
+        let arr = {
+            0: 1, 1: 3, 2: 3, 3: 4, length: 4
+        }
+        $.each(arr, (key, item) => {
+            console.log('key', key, " item", item);
+        })
+
+        let arr2 = [3, 3, 1, 2, 5]
+        $.each(arr2, (key, item) => {
+            console.log('key', key, " item", item);
+        })
+        //利用map遍历数组
+        $.map(arr, (item, key) => {
+            console.log('map: key', key, " item", item);
+        })
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

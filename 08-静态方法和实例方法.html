@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        //原生的方法
+        function AClass() {
+
+        }
+        AClass.staticMethod = () => {  
+                alert("staticMethod");
+        }
+        //静态方法
+        AClass.staticMethod()
+        //添加一个实例方法
+        AClass.prototype.instanceMethod = () => {
+            alert("instanceMethod");
+        }
+        //实例方法
+        let obj = new AClass;
+        obj.instanceMethod();
+
+        //es6类的方法
+        class AClass {
+            //构造
+            constructor() {
+                console.log('constructor');
+            }
+           //静态函数 
+            static staticMethod = () => {
+                alert("staticMethod");
+            }
+            instanceMethod = () => {
+                alert("instanceMethod")
+            }
+        }       
+        AClass.staticMethod();
+        let obj = new AClass();
+        obj.instanceMethod();
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

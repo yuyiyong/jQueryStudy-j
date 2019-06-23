@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src='./jqueryLibr/jquery-3.4.1.js'></script>
+    <script>
+        //两边去除空格
+        let str = '   ssjdkf    ';
+        let res = $.trim(str);
+        console.log('----'+res+'-----------');
+        //判断是否是window
+        let w = window;
+        let res2 = $.isWindow(w);
+        console.log('iswindow',res2);
+        //判断是否是数组
+        let arr = [1,2,3,4]
+        let res3 = $.isArray(arr);
+        console.log('$.isArray(arr)',res3);
+        //判断是否是是函数
+        let fn = () => {}
+        let res4 = $.isFunction(fn);
+        console.log(' $.isFunction',res4);
+
+        ////////////////////////////
+        //holdReady函数, 暂停执行入口函数
+
+        $.holdReady(true);
+        $(document).ready(()=>{
+            alert('dui ready');
+        })
+
+
+    </script>
+</head>
+<body>
+
+    <button>回复ready事件</button>
+    <script>
+        let btn = document.getElementsByTagName('button')[0];
+        btn.onclick = () => {
+            $.holdReady(false);
+        }
+    </script>
+</body>
+</html>

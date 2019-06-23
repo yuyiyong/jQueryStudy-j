@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./jqueryLibr/jquery-3.4.1.js"></script>
+    <script>
+        $(() => {
+            class Person{
+
+            }
+            let p = new Person;
+            p.name = "dui"; //name就是属性,"dui"就是操作赋值给name
+            console.log('p.name:',p.name);
+            let span = document.getElementsByTagName("span")[0];
+            //console.log(span);
+            span.setAttribute("name","dui1111");
+            let res = span.getAttribute("name");
+            console.log('res', res);
+        })
+    </script>
+</head>
+<body>
+    <span name="dui666"></span>
+</body>
+</html>

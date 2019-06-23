@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            margin-top: 20px;
+            border: 1px #ccc solid;
+            text-align: center
+        }
+    </style>
+    <script src="./jqueryLibr/jquery-3.4.1.js"></script>
+    <script>
+        $(() => {
+
+            // :contains(text) 找到包含指定文本内容的指定元素
+            let $div3 = $("div:contains('我是div')");
+            console.log(':contains', $div3);
+
+            // :empty 选择空的
+            let $div = $("div:empty"); 
+            console.log(':empty', $div);
+
+            // :has(selector)
+            let $div4 = $("div:has('span')");
+            console.log(':has',$div4);
+
+            // :parent 有子元素或者有文本
+            let $div1 = $("div:parent")
+            console.log(':parent', $div1);
+
+
+
+        })
+    </script>
+</head>
+
+<body>
+    <div></div>
+    <div>我是div</div>
+    <div>他们是我是div</div>
+    <div><span></span></div>
+    <div>
+        <p></p>
+    </div>
+</body>
+
+</html>
