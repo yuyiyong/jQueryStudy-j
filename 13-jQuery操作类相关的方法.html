@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .class1 {
+            width: 300px;
+            height: 300px;
+            border:  3px rgb(109, 66, 61) solid;
+        }
+
+        .class2 {
+            background: skyblue;
+        }
+    </style>
+    <script src="./jqueryLibr/jquery-3.4.1.js"></script>
+    <script>
+        $(() => {
+            /* 
+            addClass(class|fn)
+            添加一个或多个(空格分开)
+            removeClass([class|fn])
+            删除一个或多个(空格分开)
+            toggleClass(class|fn[,sw])
+            切换有?有:无
+             */
+            let btns = document.getElementsByTagName("button");
+            console.log('btn',btns[0]);
+            btns[0].onclick=function () {
+                $("div").addClass("class1 class2");
+            }
+            btns[1].onclick=() => { 
+                $('div').removeClass("class1 class2");
+            }
+            btns[2].onclick=() => {
+                let res = $("div").toggleClass("class1 class2");
+                console.log('res',res);
+
+             }
+        })
+    </script>
+
+<body>
+    <button>add</button>
+    <button>del</button>
+    <button>toggle</button>
+    <div>
+
+    </div>
+
+</body>
+
+</html>
