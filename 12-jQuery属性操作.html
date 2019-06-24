@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,25 +9,39 @@
     <script src="./jqueryLibr/jquery-3.4.1.js"></script>
     <script>
         $(() => {
-            // attr(name|pro|key,val|fn)
-                let res = $("div").attr("class")
-                console.log('res',res);
-                let res1 = $("div").attr("class","dui555")
-                console.log('-_--',$("div").attr("class"));
+            /*  // attr(name|pro|key,val|fn)
+             let res = $("div").attr("class")
+             console.log('res', res);
+             let res1 = $("div").attr("class", "dui555")
+             console.log('-_--', $("div").attr("class"));
+ 
+ 
+             // removeAttr(name) 删除属性
+             $("div").removeAttr("class")
+ 
+ 
+             // prop(n|p|k,v|f)
+             $('span').eq(0).prop("demo", "dui12345");
+             $('span').eq(1).prop("demo", 'dui7654321');
+             console.log('.prop', $('span').prop("demo"));
+ 
+ 
+             // removeProp(name)
+             $('span').removeProp("demo");//删除所有的demo 
+ 
+             $('span').prop("class", "dui");*/
+            console.log('check', $('input').prop("checked"));//true | false
+            console.log('check', $('input').attr("checked"));//checked | undefined
 
-
-            // removeAttr(name) 删除属性
-            $("div").removeAttr("class")
-
-
-            // prop(n|p|k,v|f)
-            // removeProp(name)
         })
     </script>
 </head>
+
 <body>
-    <div class="dui666"></div>
-    <div class="it6666"></div>
-    
+    <span class="div1" name='dui66666'>123</span>
+    <span class="div2" name='dui77777'>123</span>
+    <input type="checkbox" />
+
 </body>
+
 </html>
