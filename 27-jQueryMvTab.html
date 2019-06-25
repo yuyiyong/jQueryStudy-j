@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .box{
+        width: 530px;
+        margin: 50px auto;
+        border: 1px solid #cccccc;
+    }
+    ul{
+        list-style: none;
+    }
+    .nav{
+        height: 70px;
+        display: flex;
+        justify-content: flex-start;
+
+    }
+    .nav li{
+        width: 25%;
+        text-align: center;
+        line-height: 70px;
+        
+    }
+    .active{
+        background:yellowgreen;
+    }
+    </style>
+    <script src='./jqueryLibr/jquery-3.4.1.js'></script>
+    <script>
+        $(() => {
+            $(".nav>li").mouseenter(function() {console.log('dui');
+                
+                $(this).addClass("active");
+                $(this).siblings().removeClass("active");
+            })
+        })
+    </script>
+</head>
+<body>
+    <div class="box">
+    <ul class="nav">
+        <li class="active">java</li>
+        <li>c语言</li>
+        <li>jQuery</li>
+        <li>react</li>
+    </ul>
+    <ul class="content">
+        <li><img src="./asset/img/mvTab/1.jpg" alt=""></li>
+        <li><img src="./asset/img/mvTab/2.jpg" alt=""></li>
+        <li><img src="./asset/img/mvTab/3.jpg" alt=""></li>
+        <li><img src="./asset/img/mvTab/4.jpg" alt=""></li>
+    </ul>
+</div>
+</body>
+</html>
