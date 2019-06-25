@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+       .father{
+           width:200px;
+           height: 200px;
+           background: skyblue;
+       }
+       .son{
+           width: 100px;
+           height: 100px;
+           background: greenyellow;
+       }
+    </style>
+    <script src="./jqueryLibr/jquery-3.4.1.js"></script>
+    <script>
+        $(() => { 
+            //mouseover和mouseout 移入到子元素中也会一次移入一次移出操作
+            $(".father").mouseover(() => {
+                console.log('father被移入');
+            });
+            $(".father").mouseout(() => {
+                console.log('father移出了');
+            })
+            //mouseenter和mouseleave 移入到子元素中不会移入移出操作
+            $(".father").mouseenter(() => {
+                console.log('father被移入');
+            });
+            $(".father").mouseleave(() => {
+                console.log('father移出了');
+            })
+            //hover 可以一个函数也可以两个函数, 内部为enter和leave
+            $(".father").hover(() =>{
+                console.log('father被移入');
+            }, () => {
+                console.log('father移出了');
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div class="father">
+        <div class="son">
+
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./jqueryLibr/jquery-3.4.1.js"></script>
+    <script>
+        $(() => {
+            /*
+            两种绑定事件的方式
+            1. eventName(fn)
+            2. on(eventName,fn)
+            */
+           $("button").click(() => {
+               alert("hello dui")
+           })
+           $("button").on("click",()=>{
+               alert("hello, dui 666");
+           })
+           $("button").mouseenter(() => {
+               alert("碰到我了");
+           })
+           $("button").mouseleave(() => {
+               alert("我离开了");
+           })
+        })
+    </script>
+</head>
+<body>
+    <button>我是按钮</button>
+</body>
+</html>

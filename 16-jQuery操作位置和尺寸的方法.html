@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .father {
+            width: 200px;
+            height: 200px;
+            background: greenyellow;
+            border: 2px solid #ccc;
+            margin-left: 50px;
+            position: relative;
+        }
+
+        .son {
+            width: 100px;
+            height: 100px;
+            background: blue;
+            position: absolute;
+            left: 50px;
+            top: 50px;
+        }
+    </style>
+    <script src="./jqueryLibr/jquery-3.4.1.js"></script>
+    <script>
+        $(() => {
+            let btns = document.getElementsByTagName("button");
+            btns[0].onclick = () => {
+                let res = $(".father").width();
+                let res = $(".father").innerWidth();
+                let res = $(".son").offset().left
+                let res = $(".son").position()//只能获取, 不能设置
+
+                console.log("res",res);
+            }
+            btns[1].onclick = () => {
+               $(".father").width("500px");
+                $(".son").offset({left: 200});
+            }
+        })
+    </script>
+</head>
+
+<body>
+    <button>获取</button>
+    <button>设置</button>
+    <div class="father">
+        <div class="son">
+        </div>
+    </div>
+
+</body>
+
+</html>

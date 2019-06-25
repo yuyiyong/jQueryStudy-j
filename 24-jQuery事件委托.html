@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./jqueryLibr/jquery-3.4.1.js"></script>
+    <script>
+        $(() => {
+            $("button").click(() => {
+                $("ul").append("<li>我是新增的li</li>")
+            })
+            /* $("ul>li").click(function() {
+                let res = $(this).html();
+                console.log(res);
+                //console.log('hha');
+            }); */
+            $("ul").delegate("li","click",function(){
+                let res = $(this).html();
+                console.log("res",res);
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <ul>
+        <li>我是第1个li</li>
+        <li>我是第2个li</li>
+        <li>我是第3个li</li>
+    </ul>
+    <button>新增一个li</button>
+</body>
+
+</html>

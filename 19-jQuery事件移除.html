@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./jqueryLibr/jquery-3.4.1.js"></script>
+    <script>
+
+        $(() => {
+            handle = () => {
+                alert("dui 6666");
+            }
+            test = () => {
+                alert("test,")
+            }
+            $("button").click(handle);
+            $("button").click(test);
+            $("button").mouseenter(() => {
+               alert("碰到我了");
+           })
+           $("button").mouseleave(() => {
+               alert("我离开了");
+           })
+           //移除off, 不传参会移除所有的事件
+        //    $("button").off();
+        //两个参数 ,移除指定事件
+        $("button").off('click',test)
+        })
+    </script>
+</head>
+
+<body>
+    <button>anniu dd</button>
+</body>
+
+</html>

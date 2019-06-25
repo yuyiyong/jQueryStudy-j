@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+
+        }
+
+        .father {
+            width: 200px;
+            height: 200px;
+            background: #ccc;
+        }
+
+        .son {
+            width: 100px;
+            height: 100px;
+            background: skyblue;
+        }
+    </style>
+    <script src="./jqueryLibr/jquery-3.4.1.js"></script>
+    <script>
+        $(() => {
+            $(".son").click((e) => {
+                alert("son");
+               /*  return false;*/
+                e.stopPropagation(); 
+            })
+            $(".father").click(() => {
+                alert("father");
+            })
+            $("a").click((e) => {
+                alert("注册成功...");
+                //e.preventDefault();
+            })
+            $(".son").triggerHandler("click");
+            //$("span").trigger("click"); //注意如果要利用冒泡必须到a里的span
+        })
+    </script>
+</head>
+
+<body>
+    <div class="father">
+        <div class="son"></div>
+    </div>
+    <a href="www.baidu.com"><span>我是百度</span></a>
+    <form action="http://www.taoboa.com">
+        <input type="text">
+        <input type="submit">
+    </form>
+</body>
+
+</html>

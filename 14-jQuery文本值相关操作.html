@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            width: 100px;
+            height: 100px;
+            border: 1px solid #ccc;
+            margin: 20px 0;
+        }
+    </style>
+    <script src="./jqueryLibr/jquery-3.4.1.js"></script>
+    <script>
+        /* 
+            HTML代码/文本/值
+               
+            html([val|fn])  :   设置html
+                - 和原生的js很像 innerHTML一模一样; 获取html()中不传值
+            text([val|fn])  :   
+                - 和原生的js很像 innerTXT一模一样; 获取text()中不传值
+            val([val|fn|arr])
+                - 和value属性差不多
+        */
+        $(() => {
+            let btns = document.getElementsByTagName("button");
+
+            btns[0].onclick = () => {
+                console.log('0');
+                $("div").html("<p>我是p <span>我是span</span></p>")
+            }
+            btns[1].onclick = () => {
+                let res = $("div").html();
+                console.log('res:', $("div").html());
+            }
+            btns[2].onclick = () => {
+                console.log('2');
+                $("div").text("<p>我是p <span>我是span</span></p>");
+            }
+            btns[3].onclick = () => {
+                console.log('3');
+                let res = $("div").text();
+                console.log('res', res);
+            }
+            btns[4].onclick = () => {
+                console.log('4');
+                $("input").val("请输入内容");
+            }
+            btns[5].onclick = () => {
+                console.log('5');
+                let res = $("input").val();
+                console.log('res',res);
+            }
+        })
+    </script>
+</head>
+
+<body>
+    <button>设置html</button>
+    <button>获取html</button>
+    <button>设置text</button>
+    <button>获取text</button>
+    <button>设置value</button>
+    <button>获取value</button>
+    <div></div>
+    <input type="text">
+
+</body>
+
+</html>

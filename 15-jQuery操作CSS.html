@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./jqueryLibr/jquery-3.4.1.js"></script>
+    <script>
+        $(() => {
+            // 1,逐个设置
+            $("div").css("width", "100px");
+            $("div").css("height", "100px");
+            $("div").css("background", "skyblue");
+
+            //2, 链式设置
+            //一般大于3个分开
+            $("div").css("width", "100px").css("height", "100px").css("background", "yellow");
+
+            //3, 批量设置
+            $("div").css({
+                width: '200px',
+                height: '200px',
+                background: 'greenyellow',
+            });
+            //获取
+            let res = $("div").css("background");
+            console.log('res', res);
+        })
+    </script>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>

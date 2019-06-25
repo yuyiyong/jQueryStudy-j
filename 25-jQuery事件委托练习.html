@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        html,body{
+            width: 100%;
+            height: 100%;
+        }
+        .mask{
+            height: 100%;
+            width: 100%;
+            background: rgba(0,0,0,0.5);
+            position: fixed;
+            top:0;
+            left: 0;
+        }
+        .login{
+            margin: 40px auto;
+
+            position: relative;
+            width: 427px;
+            height: 494px;
+            
+        }
+        .login span{
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            //background: greenyellow;
+            top:0;
+            right: 0;
+        }
+    </style>
+    <script src="./jqueryLibr/jquery-3.4.1.js"></script>
+    <script>
+        $(() => {
+            let $mask = $('<div class="mask"><div class="login"><span></span> <img src="./asset/img/login.jpg" alt=""></div></div>')
+
+            $("a").click((e) => {
+                 $("body").append($mask)
+                e.preventDefault();
+            })
+            $("body").delegate(".login>span", "click",function(){
+                $mask.remove();
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <a href="www.taobao.com">点击登录</a>
+    <!-- <div class="mask"><div class="login"><span></span> <img src="./asset/img/login.jpg" alt=""></div></div> -->
+    <div>
+        跳转至主要内容
+        选择语言
+        跳到搜索
+        MDN Web 文档
+        技术 参考与指南 反馈
+        登录
+        搜索
+        搜索
+        Fetch 基本概念
+        语言 编辑 高级
+        跳转到： 简而言之Guard
+        草案
+        本页尚未完工.
+
+        Fetch 是一个现代的概念, 等同于 XMLHttpRequest。它提供了许多与XMLHttpRequest相同的功能，但被设计成更具可扩展性和高效性。本文介绍了 Fetch API的一些基本概念。
+
+        Note: 这篇文章可能还需要修改。如果你觉得有的概念可以解释的更好，让人们在MDN论坛上知道，或 Mozilla IRC (#mdn room)。
+
+        简而言之节
+        Fetch 的核心在于对 HTTP 接口的抽象，包括 Request，Response，Headers，Body，以及用于初始化异步请求的 global fetch。得益于 JavaScript 实现的这些抽象好的 HTTP
+        模块，其他接口能够很方便的使用这些功能。
+
+        Service Workers 是大量使用Fetch的API的一个示例。
+
+        除此之外，Fetch 还利用到了请求的异步特性——它是基于 Promise 的。
+
+        Guard节
+        Guard 是 Headers 对象的特性，基于不同的情况，它可以有以下取值：immutable、request、request-no-cors、response 或 none。
+
+        当使用 Headers() constructor 创建一个新的 Headers 对象的时候，它的 guard 被设置成 none（默认值）。当创建 Request 或 Response
+        对象的时候，它将拥有一个按照以下规则实现的与之关联的 Headers 对象：
+
+        新对象的类型 创建时的构造函数 关联的 Headers 对象的 guard
+        Request Request() request
+        Request()，mode 设置成 no-cors request-no-cors
+        Response Response() response
+        error() 或 redirect() 方法 immutable
+        头信息的 guard 会影响 set()、delete() 和 append() 方法。如果你试图修改 guard 是 immutable 的 Headers 对象，那么会抛出一个
+        TypeError。以下情况则不会抛出错误：
+
+        guard 是 request 并且头信息中的 name 不是 forbidden header name
+        guard 是 request-no-cors 并且头信息中的 name/value 是 simple header
+        guard 是 response 并且头信息中的 name 不是 forbidden response header name
+        文档标签和贡献者
+        此页面的贡献者： mdnwebdocs-bot, zhuangyin, jswisher, xgqfrms-GitHub, Jeff-Kook, xcatliu, ziyunfei
+        最后编辑者: mdnwebdocs-bot, Mar 23, 2019, 6:45:38 PM
+        Web 开发技术 Web API 接口参考 Fetch API Fetch 基本概念
+        相关主题
+        Fetch API
+        Guides
+        Cross-global fetch usage
+        Fetch 基本概念
+        使用 Fetch
+        Interfaces
+        Body
+        Headers
+        Request
+        Response
+        方法
+        WindowOrWorkerGlobalScope.fetch()
+        学习 Web 开发的最佳实践
+        让 MDN 将最新、最棒的内容直接投递到您的邮箱。
+
+        目前仅提供英文版新闻报。
+
+        电子邮件地址
+        you@example.com
+        立即注册
+        隐藏新闻报注册
+        MDN Web 文档
+        MDN
+        网络技术
+        了解 Web 开发
+        关于 MDN
+        反馈
+
+        Mozilla
+        Mozilla
+        关于
+        联系我们
+        Firefox
+
+        其他语言：
+
+        使用条款 隐私 Cookie
+        © 2005-2019 Mozilla 及各贡献者 内容可按这些许可协议使用。
+
+        跳转至主要内容 选择语言 跳到搜索 MDN Web 文档 技术 参考与指南 反馈 登录 搜索 搜索 Fetch 基本概念 语言 编辑 高级 跳转到： 简而言之Guard 草案 本页尚未完工. Fetch 是一个现代的概念,
+        等同于 XMLHttpRequest。它提供了许多与XMLHttpRequest相同的功能，但被设计成更具可扩展性和高效性。本文介绍了 Fetch API的一些基本概念。 Note:
+        这篇文章可能还需要修改。如果你觉得有的概念可以解释的更好，让人们在MDN论坛上知道，或 Mozilla IRC (#mdn room)。 简而言之节 Fetch 的核心在于对 HTTP 接口的抽象，包括
+        Request，Response，Headers，Body，以及用于初始化异步请求的 global fetch。得益于 JavaScript 实现的这些抽象好的 HTTP 模块，其他接口能够很方便的使用这些功能。
+        Service Workers 是大量使用Fetch的API的一个示例。 除此之外，Fetch 还利用到了请求的异步特性——它是基于 Promise 的。 Guard节 Guard 是 Headers
+        对象的特性，基于不同的情况，它可以有以下取值：immutable、request、request-no-cors、response 或 none。 当使用 Headers() constructor 创建一个新的
+        Headers 对象的时候，它的 guard 被设置成 none（默认值）。当创建 Request 或 Response 对象的时候，它将拥有一个按照以下规则实现的与之关联的 Headers 对象： 新对象的类型
+        创建时的构造函数 关联的 Headers 对象的 guard Request Request() request Request()，mode 设置成 no-cors request-no-cors Response
+        Response() response error() 或 redirect() 方法 immutable 头信息的 guard 会影响 set()、delete() 和 append() 方法。如果你试图修改 guard
+        是 immutable 的 Headers 对象，那么会抛出一个 TypeError。以下情况则不会抛出错误： guard 是 request 并且头信息中的 name 不是 forbidden header name
+        guard 是 request-no-cors 并且头信息中的 name/value 是 simple header guard 是 response 并且头信息中的 name 不是 forbidden response
+        header name 文档标签和贡献者 此页面的贡献者： mdnwebdocs-bot, zhuangyin, jswisher, xgqfrms-GitHub, Jeff-Kook, xcatliu, ziyunfei
+        最后编辑者: mdnwebdocs-bot, Mar 23, 2019, 6:45:38 PM Web 开发技术 Web API 接口参考 Fetch API Fetch 基本概念 相关主题 Fetch API Guides
+        Cross-global fetch usage Fetch 基本概念 使用 Fetch Interfaces Body Headers Request Response 方法
+        WindowOrWorkerGlobalScope.fetch() 学习 Web 开发的最佳实践 让 MDN 将最新、最棒的内容直接投递到您的邮箱。 目前仅提供英文版新闻报。 电子邮件地址 you@example.com
+        立即注册 隐藏新闻报注册 MDN Web 文档 MDN 网络技术 了解 Web 开发 关于 MDN 反馈 Mozilla Mozilla 关于 联系我们 Firefox 其他语言： 使用条款 隐私 Cookie ©
+        2005-2019 Mozilla 及各贡献者 内容可按这些许可协议使用。
+        跳转至主要内容 选择语言 跳到搜索 MDN Web 文档 技术 参考与指南 反馈 登录 搜索 搜索 Fetch 基本概念 语言 编辑 高级 跳转到： 简而言之Guard 草案 本页尚未完工. Fetch 是一个现代的概念,
+        等同于 XMLHttpRequest。它提供了许多与XMLHttpRequest相同的功能，但被设计成更具可扩展性和高效性。本文介绍了 Fetch API的一些基本概念。 Note:
+        这篇文章可能还需要修改。如果你觉得有的概念可以解释的更好，让人们在MDN论坛上知道，或 Mozilla IRC (#mdn room)。 简而言之节 Fetch 的核心在于对 HTTP 接口的抽象，包括
+        Request，Response，Headers，Body，以及用于初始化异步请求的 global fetch。得益于 JavaScript 实现的这些抽象好的 HTTP 模块，其他接口能够很方便的使用这些功能。
+        Service Workers 是大量使用Fetch的API的一个示例。 除此之外，Fetch 还利用到了请求的异步特性——它是基于 Promise 的。 Guard节 Guard 是 Headers
+        对象的特性，基于不同的情况，它可以有以下取值：immutable、request、request-no-cors、response 或 none。 当使用 Headers() constructor 创建一个新的
+        Headers 对象的时候，它的 guard 被设置成 none（默认值）。当创建 Request 或 Response 对象的时候，它将拥有一个按照以下规则实现的与之关联的 Headers 对象： 新对象的类型
+        创建时的构造函数 关联的 Headers 对象的 guard Request Request() request Request()，mode 设置成 no-cors request-no-cors Response
+        Response() response error() 或 redirect() 方法 immutable 头信息的 guard 会影响 set()、delete() 和 append() 方法。如果你试图修改 guard
+        是 immutable 的 Headers 对象，那么会抛出一个 TypeError。以下情况则不会抛出错误： guard 是 request 并且头信息中的 name 不是 forbidden header name
+        guard 是 request-no-cors 并且头信息中的 name/value 是 simple header guard 是 response 并且头信息中的 name 不是 forbidden response
+        header name 文档标签和贡献者 此页面的贡献者： mdnwebdocs-bot, zhuangyin, jswisher, xgqfrms-GitHub, Jeff-Kook, xcatliu, ziyunfei
+        最后编辑者: mdnwebdocs-bot, Mar 23, 2019, 6:45:38 PM Web 开发技术 Web API 接口参考 Fetch API Fetch 基本概念 相关主题 Fetch API Guides
+        Cross-global fetch usage Fetch 基本概念 使用 Fetch Interfaces Body Headers Request Response 方法
+        WindowOrWorkerGlobalScope.fetch() 学习 Web 开发的最佳实践 让 MDN 将最新、最棒的内容直接投递到您的邮箱。 目前仅提供英文版新闻报。 电子邮件地址 you@example.com
+        立即注册 隐藏新闻报注册 MDN Web 文档 MDN 网络技术 了解 Web 开发 关于 MDN 反馈 Mozilla Mozilla 关于 联系我们 Firefox 其他语言： 使用条款 隐私 Cookie ©
+        2005-2019 Mozilla 及各贡献者 内容可按这些许可协议使用。
+        跳转至主要内容 选择语言 跳到搜索 MDN Web 文档 技术 参考与指南 反馈 登录 搜索 搜索 Fetch 基本概念 语言 编辑 高级 跳转到： 简而言之Guard 草案 本页尚未完工. Fetch 是一个现代的概念,
+        等同于 XMLHttpRequest。它提供了许多与XMLHttpRequest相同的功能，但被设计成更具可扩展性和高效性。本文介绍了 Fetch API的一些基本概念。 Note:
+        这篇文章可能还需要修改。如果你觉得有的概念可以解释的更好，让人们在MDN论坛上知道，或 Mozilla IRC (#mdn room)。 简而言之节 Fetch 的核心在于对 HTTP 接口的抽象，包括
+        Request，Response，Headers，Body，以及用于初始化异步请求的 global fetch。得益于 JavaScript 实现的这些抽象好的 HTTP 模块，其他接口能够很方便的使用这些功能。
+        Service Workers 是大量使用Fetch的API的一个示例。 除此之外，Fetch 还利用到了请求的异步特性——它是基于 Promise 的。 Guard节 Guard 是 Headers
+        对象的特性，基于不同的情况，它可以有以下取值：immutable、request、request-no-cors、response 或 none。 当使用 Headers() constructor 创建一个新的
+        Headers 对象的时候，它的 guard 被设置成 none（默认值）。当创建 Request 或 Response 对象的时候，它将拥有一个按照以下规则实现的与之关联的 Headers 对象： 新对象的类型
+        创建时的构造函数 关联的 Headers 对象的 guard Request Request() request Request()，mode 设置成 no-cors request-no-cors Response
+        Response() response error() 或 redirect() 方法 immutable 头信息的 guard 会影响 set()、delete() 和 append() 方法。如果你试图修改 guard
+        是 immutable 的 Headers 对象，那么会抛出一个 TypeError。以下情况则不会抛出错误： guard 是 request 并且头信息中的 name 不是 forbidden header name
+        guard 是 request-no-cors 并且头信息中的 name/value 是 simple header guard 是 response 并且头信息中的 name 不是 forbidden response
+        header name 文档标签和贡献者 此页面的贡献者： mdnwebdocs-bot, zhuangyin, jswisher, xgqfrms-GitHub, Jeff-Kook, xcatliu, ziyunfei
+        最后编辑者: mdnwebdocs-bot, Mar 23, 2019, 6:45:38 PM Web 开发技术 Web API 接口参考 Fetch API Fetch 基本概念 相关主题 Fetch API Guides
+        Cross-global fetch usage Fetch 基本概念 使用 Fetch Interfaces Body Headers Request Response 方法
+        WindowOrWorkerGlobalScope.fetch() 学习 Web 开发的最佳实践 让 MDN 将最新、最棒的内容直接投递到您的邮箱。 目前仅提供英文版新闻报。 电子邮件地址 you@example.com
+        立即注册 隐藏新闻报注册 MDN Web 文档 MDN 网络技术 了解 Web 开发 关于 MDN 反馈 Mozilla Mozilla 关于 联系我们 Firefox 其他语言： 使用条款 隐私 Cookie ©
+        2005-2019 Mozilla 及各贡献者 内容可按这些许可协议使用。
+        跳转至主要内容 选择语言 跳到搜索 MDN Web 文档 技术 参考与指南 反馈 登录 搜索 搜索 Fetch 基本概念 语言 编辑 高级 跳转到： 简而言之Guard 草案 本页尚未完工. Fetch 是一个现代的概念,
+        等同于 XMLHttpRequest。它提供了许多与XMLHttpRequest相同的功能，但被设计成更具可扩展性和高效性。本文介绍了 Fetch API的一些基本概念。 Note:
+        这篇文章可能还需要修改。如果你觉得有的概念可以解释的更好，让人们在MDN论坛上知道，或 Mozilla IRC (#mdn room)。 简而言之节 Fetch 的核心在于对 HTTP 接口的抽象，包括
+        Request，Response，Headers，Body，以及用于初始化异步请求的 global fetch。得益于 JavaScript 实现的这些抽象好的 HTTP 模块，其他接口能够很方便的使用这些功能。
+        Service Workers 是大量使用Fetch的API的一个示例。 除此之外，Fetch 还利用到了请求的异步特性——它是基于 Promise 的。 Guard节 Guard 是 Headers
+        对象的特性，基于不同的情况，它可以有以下取值：immutable、request、request-no-cors、response 或 none。 当使用 Headers() constructor 创建一个新的
+        Headers 对象的时候，它的 guard 被设置成 none（默认值）。当创建 Request 或 Response 对象的时候，它将拥有一个按照以下规则实现的与之关联的 Headers 对象： 新对象的类型
+        创建时的构造函数 关联的 Headers 对象的 guard Request Request() request Request()，mode 设置成 no-cors request-no-cors Response
+        Response() response error() 或 redirect() 方法 immutable 头信息的 guard 会影响 set()、delete() 和 append() 方法。如果你试图修改 guard
+        是 immutable 的 Headers 对象，那么会抛出一个 TypeError。以下情况则不会抛出错误： guard 是 request 并且头信息中的 name 不是 forbidden header name
+        guard 是 request-no-cors 并且头信息中的 name/value 是 simple header guard 是 response 并且头信息中的 name 不是 forbidden response
+        header name 文档标签和贡献者 此页面的贡献者： mdnwebdocs-bot, zhuangyin, jswisher, xgqfrms-GitHub, Jeff-Kook, xcatliu, ziyunfei
+        最后编辑者: mdnwebdocs-bot, Mar 23, 2019, 6:45:38 PM Web 开发技术 Web API 接口参考 Fetch API Fetch 基本概念 相关主题 Fetch API Guides
+        Cross-global fetch usage Fetch 基本概念 使用 Fetch Interfaces Body Headers Request Response 方法
+        WindowOrWorkerGlobalScope.fetch() 学习 Web 开发的最佳实践 让 MDN 将最新、最棒的内容直接投递到您的邮箱。 目前仅提供英文版新闻报。 电子邮件地址 you@example.com
+        立即注册 隐藏新闻报注册 MDN Web 文档 MDN 网络技术 了解 Web 开发 关于 MDN 反馈 Mozilla Mozilla 关于 联系我们 Firefox 其他语言： 使用条款 隐私 Cookie ©
+        2005-2019 Mozilla 及各贡献者 内容可按这些许可协议使用。
+    </div>
+</body>
+
+</html>
