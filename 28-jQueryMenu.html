@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 700px;
+            margin: 50px auto;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: flex-start;
+            height: 60px;
+            border: 1px solid #ccc;
+            color: rgb(122, 117, 117)
+        }
+
+        .nav>li {
+            width: 25%;
+            text-align: center;
+            line-height: 60px;
+        }
+
+        .sub {
+            border: 1px solid #ccc;
+            display: none;
+        }
+
+        .active {
+            background: skyblue;
+        }
+
+        .box1 {
+            height: 200px;
+            width: 200px;
+            background: greenyellow;
+            display: none;
+        }
+    </style>
+    <script src="./jqueryLibr/jquery-3.4.1.js"></script>
+    <script>
+        $(() => {
+            $('.nav>li').mouseenter(function () {
+                console.log('hh');
+                $(this).addClass("active");
+                $(this).siblings().removeClass("active");
+                let $sub = $(this).children(".sub");
+                $sub.stop();
+                $sub.slideDown(1000);
+
+                // $(this).siblings().children(".sub").slideUp(1000);
+            });
+            $('.nav>li').mouseleave(function () {
+                $(this).children(".sub").stop();
+                $(this).children(".sub").slideUp(400);
+
+
+            });
+            $(".sub>li").mouseenter(function () {
+                $(this).addClass("active");
+                $(this).siblings().removeClass("active");
+            })
+            $("button").eq(0).click(() => {
+                $(".box1").stop().slideDown(1000).fadeOut(1000).fadeIn(1000, () => {
+                    alert("淡入完毕...");
+                    console.log('haha');
+                });
+            });
+
+            $(".btn").click(() => {
+                console.log('dui');
+                $(".box1").stop().animate({ marginLeft: '200px',width:"+=100" }, 1000, "swing", () => {
+                    alert("完成");
+                })
+            })
+        })
+    </script>
+</head>
+
+<body>
+
+    <div class="box">
+        <ul class="nav">
+            <li>
+                一级菜单
+                <ul class="sub">
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+                </ul>
+            </li>
+            <li>
+                一级菜单
+                <ul class="sub">
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+                </ul>
+            </li>
+            <li>
+                一级菜单
+                <ul class="sub">
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+                </ul>
+            </li>
+            <li>
+                一级菜单
+                <ul class="sub">
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="box1"></div>
+    <button>效果</button>
+    <button class="btn">自定义</button>
+</body>
+
+</html>

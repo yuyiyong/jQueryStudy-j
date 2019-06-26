@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 530px;
+            margin: 50px auto;
+            border: 1px solid #cccccc;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .nav {
+            height: 70px;
+            display: flex;
+            justify-content: flex-start;
+
+        }
+
+        .nav li {
+            width: 25%;
+            text-align: center;
+            line-height: 70px;
+
+        }
+
+        .active {
+            background: yellowgreen;
+        }
+
+        .content>li {
+            display: none;
+        }
+
+        .content>.show {
+            display: block;
+        }
+        .Tshow{
+            width: 200px;
+            height: 200px;
+            background:skyblue;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            text-indent: 2em;
+        }
+    </style>
+    <script src='./jqueryLibr/jquery-3.4.1.js'></script>
+    <script>
+        $(() => {
+            //tab美女
+            $(".nav>li").mouseenter(function () {
+                console.log('dui');
+                $(this).addClass("active");
+                $(this).siblings().removeClass("active");
+                let index = $(this).index();
+                //index的li的jQuery电话
+                let $li = $(".content>li").eq(index);
+                console.log('$li',$li);
+                $li.siblings().removeClass("show");
+                $li.addClass("show");
+                
+            })
+
+            //隐藏显示切换效果
+            $("button").eq(0).click(() => {
+                $(".Tshow").show(() => {
+                    alert("dui666");
+                })
+            });
+            $("button").eq(1).click(() => {
+                $(".Tshow").hide(2000,() =>{
+                    console.log('显示');
+                })
+            });
+            $("button").eq(2).click(() => {
+                $(".Tshow").toggle(1000,() => {
+
+                })
+            })
+
+        })
+    </script>
+</head>
+
+<body>
+    <button>显示</button>
+    <button>隐藏</button>
+    <button>切换</button>
+    <div class="Tshow">
+        字体如何, 兑仙人,字体如何, 兑仙人,字体如何, 兑仙人,字体如何, 兑仙人,字体如何, 兑仙人,字体如何, 兑仙人,
+    </div>
+    <div class="box">
+        <ul class="nav">
+            <li class="active">java</li>
+            <li>c语言</li>
+            <li>jQuery</li>
+            <li>react</li>
+        </ul>
+        <ul class="content">
+            <li class="show"><img src="./asset/img/mvTab/1.jpg" alt=""></li>
+            <li><img src="./asset/img/mvTab/2.jpg" alt=""></li>
+            <li><img src="./asset/img/mvTab/3.jpg" alt=""></li>
+            <li><img src="./asset/img/mvTab/4.jpg" alt=""></li>
+        </ul>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+
+    }
+    body{
+        height: 3000px;
+    }
+    </style>
+    <script src="./jqueryLibr/jquery-3.4.1.js"></script>
+    <script>
+        $(() => {
+            $(window).scroll(() => {
+                let offset = $("html").scrollTop();
+                console.log('res',offset);
+            })
+        })
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

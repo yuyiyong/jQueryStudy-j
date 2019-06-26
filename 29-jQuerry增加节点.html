@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./jqueryLibr/jquery-3.4.1.js"></script>
+    <script>
+        $(() => {
+
+            /* 
+            append(content|fn)
+                - 添加到ul的末端
+                    $("ul").append($li);
+
+            appendTo(content)
+                - li.添加到ul的头端
+                    $("ul").prepend($li);
+
+            prepend(content|fn)
+                - 添加在ul的头端
+                     $li.appendTo("ul");
+
+            prependTo(content)
+                - li.添加到ul的头端
+                    $li.prependTo("ul");
+
+            外部插入
+            after(content|fn)
+                -在指定位置外部的后面
+                    $("ul").after($li);
+
+            before(content|fn)
+                - 在指定位置外部的前面
+                    $("ul").before($li);
+            insertAfter(content)
+            insertBefore(content)
+            */
+
+
+            $("button").eq(0).click(() => {
+                let $li = $("<li>新li</li>");
+                /* $("ul").append($li);
+                $("ul").prepend($li);
+                $li.appendTo("ul");
+                $li.prependTo("ul"); 
+                $("ul").after($li); //在指定位置的后面
+                $("ul").before($li);//在指定位置的前面
+                $li.insertAfter("ul"); //在指定位置的后面
+                */
+               $li.insertBefore("ul"); //在指定位置的前面
+            })
+        });
+    </script>
+</head>
+
+<body>
+    <button>add节点</button>
+    <ul>
+        <li>我是第1个li</li>
+        <li>我是第2个li</li>
+        <li>我是第3个li</li>
+        <li>我是第4个li</li>
+    </ul>
+</body>
+
+</html>

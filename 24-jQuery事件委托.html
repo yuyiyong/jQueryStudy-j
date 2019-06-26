@@ -17,6 +17,8 @@
                 console.log(res);
                 //console.log('hha');
             }); */
+
+            //ul监听click, 委托给li, li冒泡给ul, 把li的click事件委托给ul
             $("ul").delegate("li","click",function(){
                 let res = $(this).html();
                 console.log("res",res);
